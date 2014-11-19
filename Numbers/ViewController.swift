@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var nine: UILabel!
     @IBOutlet weak var ten: UILabel!
     
+    @IBOutlet weak var textField: UITextField!
     var timer = NSTimer()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,10 +58,17 @@ class ViewController: UIViewController {
         }
        counter++
         
-        if counter > 10 {
+        if counter > 2 {
             //stop timer
             self.timer.invalidate()
+            numberLabel.hidden = true
+            showkeyboard()
         }
+    }
+    
+    func showkeyboard(){
+        NSLog("Show Keyboard")
+        textField.becomeFirstResponder()
     }
     
     func randomInt(min:Int, max:Int) -> Int {

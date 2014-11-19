@@ -106,7 +106,15 @@
                                     <rect key="frame" x="70" y="55" width="20" height="36"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gk-Eu-CM8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JML-0t-LbW">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="137" y="123" width="97" height="30"/>
+                                </variation>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="?" textAlignment="center" lineBreakMode="tailTruncation" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Gk-Eu-CM8">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="134"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -130,6 +138,7 @@
                                 <exclude reference="3Wr-wJ-zKO"/>
                                 <exclude reference="Wrc-3g-DRL"/>
                                 <exclude reference="ACz-bn-nw2"/>
+                                <exclude reference="JML-0t-LbW"/>
                                 <exclude reference="2Gk-Eu-CM8"/>
                             </mask>
                         </variation>
@@ -145,6 +154,7 @@
                                 <include reference="3Wr-wJ-zKO"/>
                                 <include reference="Wrc-3g-DRL"/>
                                 <include reference="ACz-bn-nw2"/>
+                                <include reference="JML-0t-LbW"/>
                                 <include reference="2Gk-Eu-CM8"/>
                             </mask>
                         </variation>
@@ -159,6 +169,7 @@
                         <outlet property="seven" destination="XZb-Co-6vy" id="CGx-Qf-Tf9"/>
                         <outlet property="six" destination="51o-Q2-fCa" id="Xif-4D-Phj"/>
                         <outlet property="ten" destination="Wrc-3g-DRL" id="MNV-e2-zQa"/>
+                        <outlet property="textField" destination="JML-0t-LbW" id="KuI-zA-ypY"/>
                         <outlet property="three" destination="xrP-BY-w7z" id="J0a-cM-Mk4"/>
                         <outlet property="two" destination="ah5-rT-tX5" id="l7L-Gm-Vdc"/>
                     </connections>
