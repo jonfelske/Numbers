@@ -23,6 +23,48 @@ class ViewController: UIViewController {
     @IBOutlet weak var nine: UILabel!
     @IBOutlet weak var ten: UILabel!
     
+    @IBOutlet weak var oneBtn: UIButton!
+    @IBOutlet weak var twoBtn: UIButton!
+    @IBOutlet weak var threeBtn: UIButton!
+    @IBOutlet weak var fourBtn: UIButton!
+    @IBOutlet weak var fiveBtn: UIButton!
+    @IBOutlet weak var sixBtn: UIButton!
+    @IBOutlet weak var sevenBtn: UIButton!
+    @IBOutlet weak var eightBtn: UIButton!
+    @IBOutlet weak var nineBtn: UIButton!
+    @IBOutlet weak var zeroBtn: UIButton!
+    
+    @IBAction func onePressed(sender: AnyObject) {
+        NSLog("One Pressed")
+    }
+    @IBAction func twoPressed(sender: AnyObject) {
+        NSLog("Two Pressed")
+    }
+    @IBAction func threePressed(sender: AnyObject) {
+        NSLog("Three Pressed")
+    }
+    @IBAction func fourPressed(sender: AnyObject) {
+        NSLog("Four Pressed")
+    }
+    @IBAction func fivePressed(sender: AnyObject) {
+         NSLog("FivePressed")
+    }
+    @IBAction func sixPressed(sender: AnyObject) {
+        NSLog("SixPressed")
+    }
+    @IBAction func sevenPressed(sender: AnyObject) {
+        NSLog("SevenPressed")
+    }
+    @IBAction func eightPressed(sender: AnyObject) {
+        NSLog("EightPressed")
+    }
+    @IBAction func ninePressed(sender: AnyObject) {
+        NSLog("NinePressed")
+    }
+    @IBAction func zeroPressed(sender: AnyObject) {
+        NSLog("ZeroPressed")
+    }
+    
     @IBOutlet weak var textField: UITextField!
     var timer = NSTimer()
     override func viewDidLoad() {
@@ -68,7 +110,7 @@ class ViewController: UIViewController {
     
     func showkeyboard(){
         NSLog("Show Keyboard")
-        textField.becomeFirstResponder()
+        //textField.becomeFirstResponder()
     }
     
     func randomInt(min:Int, max:Int) -> Int {
