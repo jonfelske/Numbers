@@ -23,6 +23,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var nine: UILabel!
     @IBOutlet weak var ten: UILabel!
     
+   
+    
     @IBOutlet weak var oneBtn: UIButton!
     @IBOutlet weak var twoBtn: UIButton!
     @IBOutlet weak var threeBtn: UIButton!
@@ -87,7 +89,9 @@ class ViewController: UIViewController {
 
         
         switch counter{
-            case 1: one.text = "\(randomNumer)"
+            case 1:
+                one.text = "\(randomNumer)"
+            
             case 2: two.text = "\(randomNumer)"
             case 3: three.text = "\(randomNumer)"
             case 4: four.text = "\(randomNumer)"
