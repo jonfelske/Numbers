@@ -23,8 +23,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var nine: UILabel!
     @IBOutlet weak var ten: UILabel!
     
-   
-    
     @IBOutlet weak var oneBtn: UIButton!
     @IBOutlet weak var twoBtn: UIButton!
     @IBOutlet weak var threeBtn: UIButton!
@@ -35,6 +33,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var eightBtn: UIButton!
     @IBOutlet weak var nineBtn: UIButton!
     @IBOutlet weak var zeroBtn: UIButton!
+    
+    @IBOutlet weak var tryAgain: UIButton!
+    
+    @IBAction func tryAgainPressed(sender: AnyObject) {
+        start()
+        tryAgain.hidden = true
+    }
     
     @IBAction func onePressed(sender: AnyObject) {
         NSLog("One Pressed")
@@ -67,42 +72,30 @@ class ViewController: UIViewController {
         NSLog("ZeroPressed")
     }
     
-    @IBOutlet weak var textField: UITextField!
+    
     var timer = NSTimer()
     override func viewDidLoad() {
         super.viewDidLoad()
+        start()
+    }
+    
+    var counter = 0
+    
+    func start(){
+        counter = 0
+        numberLabel.text = ""
+        numberLabel.hidden = false
+        
+        
         self.timer = NSTimer.scheduledTimerWithTimeInterval(0.6, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
     }
     
     
-    var counter = 1
+    
     
     func update() {
-        // Something cool
-        
-        //get random number
-        let randomNumer = randomInt(0, max: 9)
-        NSLog("randomNumber = \(randomNumer)")
-        
-        //set label
-        numberLabel.text = "\(randomNumer)"
-
-        
-        switch counter{
-            case 1:
-                one.text = "\(randomNumer)"
-            
-            case 2: two.text = "\(randomNumer)"
-            case 3: three.text = "\(randomNumer)"
-            case 4: four.text = "\(randomNumer)"
-            case 5: five.text = "\(randomNumer)"
-            case 6: six.text = "\(randomNumer)"
-            case 7: seven.text = "\(randomNumer)"
-            case 8: eight.text = "\(randomNumer)"
-            case 9: nine.text = "\(randomNumer)"
-            default: ten.text = "\(randomNumer)"
-        }
-       counter++
+        counter++
         
         if counter > 2 {
             //stop timer
@@ -110,12 +103,89 @@ class ViewController: UIViewController {
             numberLabel.hidden = true
             showkeyboard()
         }
+        else{
+        
+            //get random number
+            let randomNumer = randomInt(0, max: 9)
+            NSLog("randomNumber = \(randomNumer)")
+            numberLabel.text = "\(randomNumer)"
+
+            switch counter{
+                case 1:
+                    one.text = "\(randomNumer)"
+            
+                case 2: two.text = "\(randomNumer)"
+                case 3: three.text = "\(randomNumer)"
+                case 4: four.text = "\(randomNumer)"
+                case 5: five.text = "\(randomNumer)"
+                case 6: six.text = "\(randomNumer)"
+                case 7: seven.text = "\(randomNumer)"
+                case 8: eight.text = "\(randomNumer)"
+                case 9: nine.text = "\(randomNumer)"
+                default: ten.text = "\(randomNumer)"
+            }
+            
+        }
+       
+        
+       
     }
     
     func showkeyboard(){
+        
         NSLog("Show Keyboard")
         //textField.becomeFirstResponder()
+        oneBtn.hidden = false
+        twoBtn.hidden = false
+        threeBtn.hidden = false
+        fourBtn.hidden = false
+        fiveBtn.hidden = false
+        sixBtn.hidden = false
+        sevenBtn.hidden = false
+        eightBtn.hidden = false
+        nineBtn.hidden = false
+        zeroBtn.hidden = false
+        
+        self.timer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: Selector("timesUp"), userInfo: nil, repeats: false)
+        
     }
+    
+    func hideKeyboard(){
+        oneBtn.hidden = true
+        twoBtn.hidden = true
+        threeBtn.hidden = true
+        fourBtn.hidden = true
+        fiveBtn.hidden = true
+        sixBtn.hidden = true
+        sevenBtn.hidden = true
+        eightBtn.hidden = true
+        nineBtn.hidden = true
+        zeroBtn.hidden = true
+    }
+    
+    func timesUp (){
+        NSLog("TIMES UP")
+        //Hide key board
+        hideKeyboard()
+        tryAgain.hidden = false
+        resetNumbers()
+    }
+    
+    func resetNumbers(){
+        one.text = "?"
+        two.text = "?"
+        three.text = "?"
+        four.text = "?"
+        five.text = "?"
+        six.text = "?"
+        seven.text = "?"
+        eight.text = "?"
+        nine.text = "?"
+        ten.text = "?"
+
+        
+    }
+    
     
     func randomInt(min:Int, max:Int) -> Int {
         return min + Int(arc4random_uniform(UInt32(max - min + 1)))
